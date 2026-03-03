@@ -13,7 +13,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-PRE_BUILD_CMDS="sed -i 's/ --prefix=\/usr//' ./PKGBUILD" make-aur-package powermanga
+PRE_BUILD_CMDS="sed -i 's/ --prefix=\/usr//; s|usr/games|usr/local/share/games|' ./PKGBUILD" make-aur-package powermanga
 mkdir -p ./AppDir/bin
 mv -v /usr/bin/powermanga ./AppDir/bin
 mv -v /usr/share/games/powermanga/* ./AppDir/bin
